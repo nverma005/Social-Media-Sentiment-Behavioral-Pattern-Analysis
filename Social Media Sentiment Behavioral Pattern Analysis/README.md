@@ -1,7 +1,6 @@
 # Social Media Sentiment & Behavioural Pattern Analysis
 
-Analyzes 7,683 Mastodon social media posts to detect echo chambers,
-doom-scrolling behavior, and sentiment patterns using Python and Power BI.
+Analyzes 7,683 Mastodon social media posts to detect echo chambers, doom-scrolling behavior, and sentiment patterns using Python and Power BI.
 
 ## What This Project Does
 
@@ -10,7 +9,7 @@ doom-scrolling behavior, and sentiment patterns using Python and Power BI.
 - Classifies sentiment using VADER into positive, negative, and neutral
 - Clusters posts into 5 echo chambers using keyword-based topic rules
 - Flags doom-scrolling posts based on sentiment and harmful keywords
-- Visualizes all findings in an interactive 2-page Power BI dashboard
+- Visualizes findings in an interactive 2-page Power BI dashboard
 
 ## Key Findings
 
@@ -18,7 +17,7 @@ doom-scrolling behavior, and sentiment patterns using Python and Power BI.
 - Russia-Ukraine War echo chamber had the highest doom-scroll rate at 94%
 - Health & Safety echo chamber second at 76%
 - 49.5% of all posts flagged as doom-scrolling content
-- 5 distinct echo chambers found across politics, climate, health, war, and business
+- 5 distinct echo chambers identified across politics, climate, health, war, and business
 
 ## Tech Stack
 
@@ -36,39 +35,33 @@ doom-scrolling behavior, and sentiment patterns using Python and Power BI.
 
 ## Project Structure
 
-├── Dataset/
-│   ├── Mastodon dataset/
-│   └── Pre Processed Dataset/
+├── Mastodon dataset/            # Raw collected data
+├── Pre Processed Dataset/       # Cleaned data
 ├── Output/
-│   ├── powerbi_ready.csv
+│   ├── powerbi_ready.csv        # Enriched dataset
 │   └── Social_Media_Sentiment_Analysis.pbix
-├── Screenshots/
-│   ├── overview_page.png
-│   └── behaviour_analysis_page.png
+├── Screenshots/                 # UI and dashboard screenshots
 ├── Scripts/
-│   ├── data_collection.py
-│   ├── data_pre_processing.py
-│   └── methodology.py
+│   ├── user_interface.py        # Main GUI entry point
+│   ├── data_access_layer.py     # Connects UI to logic
+│   ├── data_collection.py       # Mastodon API collection
+│   ├── data_pre_processing.py   # 11-step NLP pipeline
+│   └── methodology.py           # Echo chamber and doom scroll detection
 └── README.md
 
-## Pipeline
+## How to Run
 
-**Step 1: Data Collection**
-Connects to Mastodon API, fetches 100 posts every 2 minutes via GUI, saves to CSV.
+1. Clone the repo
+2. Install dependencies: `pip install -r requirements.txt`
+3. Create a `.env` file with your Mastodon credentials:
 
-**Step 2: Preprocessing**
-11 steps: HTML removal, special character cleaning, lowercasing, tokenization,
-stopword removal, space normalization, lemmatization, negation handling,
-specific word removal, non-English filtering, deduplication.
-VADER assigns sentiment label to each post.
+MASTODON_CLIENT_ID=your_client_key
+MASTODON_CLIENT_SECRET=your_client_secret
+MASTODON_ACCESS_TOKEN=your_access_token
+MASTODON_URL=https://mastodon.social
 
-**Step 3: Analysis**
-Keyword rules assign each post to one of 5 echo chambers.
-Doom scroll flag added based on negative sentiment and harmful keywords.
-
-**Step 4: Dashboard**
-Power BI reads enriched CSV and visualizes sentiment, echo chambers,
-doom scroll rates, trends over time, and top active users.
+4. Run: `python Scripts/user_interface.py`
+5. Follow the 3 steps in the GUI
 
 ## Dashboard Screenshots
 
