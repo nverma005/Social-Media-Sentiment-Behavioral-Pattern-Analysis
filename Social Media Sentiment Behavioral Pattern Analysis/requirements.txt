@@ -1,0 +1,7 @@
+mastodon.py
+pandas
+nltk
+beautifulsoup4
+langdetect
+python-dotenv
+scikit-learn
