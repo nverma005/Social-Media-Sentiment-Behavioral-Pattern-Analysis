@@ -35,19 +35,24 @@ Analyzes 7,683 Mastodon social media posts to detect echo chambers, doom-scrolli
 
 ## Project Structure
 
-├── Mastodon dataset/            # Raw collected data
-├── Pre Processed Dataset/       # Cleaned data
+## Project Structure
+
+```
+├── Mastodon dataset/
+├── Pre Processed Dataset/
 ├── Output/
-│   ├── powerbi_ready.csv        # Enriched dataset
+│   ├── powerbi_ready.csv
 │   └── Social_Media_Sentiment_Analysis.pbix
-├── Screenshots/                 # UI and dashboard screenshots
+├── Screenshots/
 ├── Scripts/
-│   ├── user_interface.py        # Main GUI entry point
-│   ├── data_access_layer.py     # Connects UI to logic
-│   ├── data_collection.py       # Mastodon API collection
-│   ├── data_pre_processing.py   # 11-step NLP pipeline
-│   └── methodology.py           # Echo chamber and doom scroll detection
+│   ├── user_interface.py
+│   ├── data_access_layer.py
+│   ├── data_collection.py
+│   ├── data_pre_processing.py
+│   └── methodology.py
+├── requirements.txt
 └── README.md
+```
 
 ## How to Run
 
