@@ -97,18 +97,18 @@ python Scripts/user_interface.py
 ## Project Structure
 
 ```
-├── Mastodon dataset/
-├── Pre Processed Dataset/
+├── Mastodon dataset/# Raw collected data
+├── Pre Processed Dataset/# Cleaned data
 ├── Output/
 │   ├── powerbi_ready.csv
 │   └── Social_Media_Sentiment_Analysis.pbix
-├── Screenshots/
+├── Screenshots/# UI and dashboard screenshots
 ├── Scripts/
-│   ├── user_interface.py
-│   ├── data_access_layer.py
-│   ├── data_collection.py
-│   ├── data_pre_processing.py
-│   └── methodology.py
+│   ├── user_interface.py # Main GUI entry point
+│   ├── data_access_layer.py # Connects UI to logic
+│   ├── data_collection.py # Mastodon API collection
+│   ├── data_pre_processing.py #  data cleaning
+│   └── methodology.py # Echo chamber and doom scroll detection
 ├── requirements.txt
 └── README.md
 ```
@@ -116,5 +116,4 @@ python Scripts/user_interface.py
 
 ## Related
 
-Based on MSc dissertation at University of Strathclyde, 2023-2024.  
-Thesis repo: https://github.com/nverma005/Social-Media-Sentiment-Behavioural-Pattern-Analysis
+Based on MSc dissertation at University of Strathclyde, 2023-2024.
